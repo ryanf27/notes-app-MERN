@@ -1,6 +1,8 @@
 const Notes = require("../models/notes");
+const NotFoundError = require("../../errors/not-found");
+const BadRequestError = require("../../errors/bad-request");
 
-const show = async (req, res) => {
+const show = async (req, res, next) => {
   try {
     const result = await Notes.find();
 
@@ -8,35 +10,37 @@ const show = async (req, res) => {
       data: result,
     });
   } catch (err) {
-    console.error(err.message);
+    next(err);
   }
 };
 
-const find = async (req, res) => {
+const find = async (req, res, next) => {
   try {
     const { id } = req.params;
 
-    const result = await Notes.findOne({ _id: id });
+    const result = await Notes.findOne({
+      _id: id,
+    });
 
     if (!result) {
-      console.log("not found ");
+      throw new NotFoundError(`Id Not Found`);
     }
     res.status(200).json({
       data: result,
     });
   } catch (err) {
-    console.error(err.message);
+    next(err);
   }
 };
 
-const create = async (req, res) => {
+const create = async (req, res, next) => {
   try {
     const { title, body } = req.body;
 
     const check = await Notes.findOne({ title });
 
     if (check) {
-      console.error(err.message);
+      throw new BadRequestError(`The Note Name already used`);
     }
     const result = await Notes.create({ title, body });
 
@@ -44,11 +48,11 @@ const create = async (req, res) => {
       data: result,
     });
   } catch (err) {
-    console.error(err.message);
+    next(err);
   }
 };
 
-const update = async (req, res) => {
+const update = async (req, res, next) => {
   try {
     const { id } = req.params;
     const { title, body } = req.body;
@@ -56,7 +60,7 @@ const update = async (req, res) => {
     const check = await Notes.findOne({ title, _id: { $ne: id } });
 
     if (!check) {
-      console.log("data not found");
+      throw new NotFoundError(`Id Not Found`);
     }
     const result = await Notes.findOneAndUpdate(
       { _id: id },
@@ -68,18 +72,18 @@ const update = async (req, res) => {
       data: result,
     });
   } catch (err) {
-    console.error(err);
+    next(err);
   }
 };
 
-const remove = async (req, res) => {
+const remove = async (req, res, next) => {
   try {
     const { id } = req.params;
 
     const result = await Notes.findOne({ _id: id });
 
     if (!result) {
-      console.log("data not found");
+      throw new NotFoundError(`Id Not Found`);
     }
 
     await result.deleteOne();
@@ -88,7 +92,7 @@ const remove = async (req, res) => {
       message: "success",
     });
   } catch (err) {
-    console.error(err);
+    next(err);
   }
 };
 
