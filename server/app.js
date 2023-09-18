@@ -1,20 +1,43 @@
 const express = require("express");
 const app = express();
-const port = 3000;
+
+require("dotenv").config();
+const port = process.env.PORT || 3000;
+const MONGO_URI = process.env.URL_MONGGODB_DEV;
 const mongoose = require("mongoose");
+
 const handleErrorMiddleware = require("./middlewares/error-handler");
 app.use(express.json());
 
-// mongodb database
-mongoose.connect("mongodb://127.0.0.1:27017/notes_app");
+// connect to MongoDB
+const connectMongo = async () => {
+  try {
+    await mongoose.connect(MONGO_URI, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+    console.log("MongoDB connection successful");
+  } catch (error) {
+    console.error("MongoDB connection failed", error);
+    process.exit(1);
+  }
+};
 
-// router
+// Start the server
+const startServer = async () => {
+  await connectMongo();
+
+  app.listen(port, () => {
+    console.log(`Server listening on port ${port}`);
+  });
+};
+// Define API Routes
 const notesRoutes = require("./api/routes/notes");
 
 app.use("/api", notesRoutes);
 
+// Register middleware
 app.use(handleErrorMiddleware);
 
-app.listen(port, () => {
-  console.log(`Server listening on port ${port}`);
-});
+// Start the server
+startServer();

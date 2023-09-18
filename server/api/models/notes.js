@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const { model, Schema } = mongoose;
 
-const notesSchema = Schema(
+const noteSchema = Schema(
   {
     title: {
       type: String,
@@ -19,4 +19,4 @@ const notesSchema = Schema(
   { timestamps: true }
 );
 
-module.exports = model("notes", notesSchema);
+module.exports = model("Note", noteSchema);

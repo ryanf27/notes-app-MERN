@@ -2,7 +2,7 @@ const Notes = require("../models/notes");
 const NotFoundError = require("../../errors/not-found");
 const BadRequestError = require("../../errors/bad-request");
 
-const show = async (req, res, next) => {
+const index = async (req, res, next) => {
   try {
     const result = await Notes.find();
 
@@ -97,7 +97,7 @@ const remove = async (req, res, next) => {
 };
 
 module.exports = {
-  show,
+  index,
   create,
   find,
   update,

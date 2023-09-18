@@ -1,21 +1,23 @@
 const mongoose = require("mongoose");
 const { model, Schema } = mongoose;
 
-const userssSchema = Schema(
+const userSchema = Schema(
   {
-    name: {
+    username: {
       type: String,
       required: true,
       minlength: 3,
       maxlength: 33,
+      unique: true,
       trim: true,
     },
     email: {
       type: String,
       required: true,
       trim: true,
+      unique: true,
     },
-    email: {
+    password: {
       type: String,
       required: true,
       trim: true,
@@ -24,4 +26,4 @@ const userssSchema = Schema(
   { timestamps: true }
 );
 
-module.exports = model("notes", notesSchema);
+module.exports = model("User", userSchema);

@@ -1,8 +1,8 @@
 const express = require("express");
 const router = express.Router();
-const { show, create, find, update, remove } = require("../controllers/notes");
+const { find, create, find, update, remove } = require("../controllers/notes");
 
-router.get("/notes", show);
+router.get("/notes", find);
 router.get("/notes/:id", find);
 router.post("/notes", create);
 router.put("/notes/:id", update);
