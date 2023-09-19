@@ -6,7 +6,7 @@ const errorHandlerMiddleware = (err, req, res, next) => {
 
   if (err.name === "ValidationError") {
     customError.msg = Object.values(err.errors)
-      .maps((item) => items.message)
+      .map((item) => item.message)
       .join(",");
     customError.statusCode = 400;
   }
