@@ -14,7 +14,7 @@ const create = async (req, res, next) => {
     });
 
     res.status(201).json({
-      data: result,
+      messgae: "success",
     });
   } catch (error) {
     next(error);
