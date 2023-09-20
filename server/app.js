@@ -34,9 +34,11 @@ const startServer = async () => {
 // Define API Routes
 const notesRoutes = require("./api/routes/notes");
 const registrationRoutes = require("./api/routes/registration");
+const loginRoutes = require("./api/routes/login");
 
 app.use("/api", registrationRoutes);
 app.use("/api", notesRoutes);
+app.use("/api", loginRoutes);
 
 // Register middleware
 app.use(handleErrorMiddleware);
