@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const cookieParser = require("cookie-parser");
 
 require("dotenv").config();
 const port = process.env.PORT || 3000;
@@ -7,6 +8,7 @@ const MONGO_URI = process.env.URL_MONGGODB_DEV;
 const mongoose = require("mongoose");
 
 const handleErrorMiddleware = require("./middlewares/error-handler");
+app.use(cookieParser());
 app.use(express.json());
 
 // connect to MongoDB

@@ -22,6 +22,9 @@ const userSchema = Schema(
       required: true,
       trim: true,
     },
+    refresh_token: {
+      type: String,
+    },
   },
   { timestamps: true }
 );
