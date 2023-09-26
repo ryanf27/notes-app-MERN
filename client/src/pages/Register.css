@@ -1,0 +1,52 @@
+@import "../index.css";
+* {
+  /* border: 1px solid red; */
+}
+.register {
+  min-height: 100vh;
+}
+
+.formComponent {
+  width: 100%;
+  display: flex;
+  margin-top: 0;
+}
+
+.registerContent {
+  width: 50%;
+  min-height: 93vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #5863db, #818ce6);
+  color: var(--primary-color);
+  padding-right: 40px;
+  padding-left: 40px;
+}
+
+.registerContent h2 {
+  font-weight: 700;
+}
+.registerContent p {
+  width: 80%;
+}
+
+Form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+
+Form .formControl {
+  width: 40vw;
+}
+
+Form .formButton {
+  margin-top: 10px;
+  background: var(--button-color);
+  border: none;
+  color: var(--text-color);
+}

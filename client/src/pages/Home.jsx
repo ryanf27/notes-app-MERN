@@ -2,16 +2,18 @@ import Navigation from "../components/Navigation";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import Button from "react-bootstrap/Button";
 import imgHero from "../assets/img1.svg";
+import "./Home.css";
 
 const Home = () => {
   return (
-    <>
+    <div className="home">
       <Navigation />
       <Container>
-        <Row>
-          <Col>
-            <img src={imgHero} alt="" />
+        <Row className="heroContent">
+          <Col className="heroImg">
+            <img src={imgHero} alt="hero image" />
           </Col>
           <Col>
             <h1>
@@ -24,11 +26,13 @@ const Home = () => {
               images, and even audio recordings. You can also organize your
               notes into notebooks and folders for easy access
             </p>
-            <button>Sign up for a free trial today!</button>
+            <Button variant="secondary" href="/register">
+              Sign up for a free trial today!
+            </Button>
           </Col>
         </Row>
       </Container>
-    </>
+    </div>
   );
 };
 

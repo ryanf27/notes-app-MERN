@@ -6,9 +6,9 @@ import Button from "react-bootstrap/Button";
 const Navigation = () => {
   return (
     <>
-      <Navbar expand="lg" className="bg-body-tertiary">
+      <Navbar expand="lg" className="bg-body-tertiary ">
         <Container>
-          <Navbar.Brand href="#home">NotesApp</Navbar.Brand>
+          <Navbar.Brand href="/">NotesApp</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
@@ -17,14 +17,11 @@ const Navigation = () => {
               <Nav.Link href="#link">FAQs</Nav.Link>
               <Nav.Link href="#link">About</Nav.Link>
             </Nav>
-            <div>
+            <Nav>
               <Button variant="secondary" href="/login">
-                Sign in
+                login
               </Button>
-              <Button variant="light" href="/register">
-                Sign up
-              </Button>
-            </div>
+            </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
