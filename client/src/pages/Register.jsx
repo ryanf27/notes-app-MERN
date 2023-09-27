@@ -1,6 +1,6 @@
 import { Form, FormGroup, FormControl, Button } from "react-bootstrap";
 import { useState } from "react";
-import "./Register.css";
+import "./Register_Login.css";
 import Navigation from "../components/Navigation";
 
 const Register = () => {

@@ -50,3 +50,22 @@ Form .formButton {
   border: none;
   color: var(--text-color);
 }
+
+.rowContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.rowContainer .form-check,
+.rowContainer .nav-link {
+  margin: 8px 50px;
+}
+
+.formComponent .nav-link {
+  color: #818181;
+  font-size: 0.8rem;
+}
+
+.formComponent .nav-link span {
+  color: #0515cd;
+}
