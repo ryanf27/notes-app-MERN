@@ -1,8 +1,10 @@
+@import "../../index.css";
+
 #navbar.navbar {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 10px;
+  padding: 8px;
   background: transparent;
   border-bottom: 1px solid #ccc;
   position: fixed;
@@ -11,8 +13,18 @@
   transition: background-color 0.3s ease;
 }
 
+#navbar.navbar.scrolled {
+  background-color: var(--color-4);
+}
+
+#navbar.navbar.scrolled a {
+  color: var(--color-3);
+}
+
 #navbar a {
   color: var(--color-5);
+  font-size: 1.2rem;
+  font-weight: 400;
 }
 
 .navbar-brand img {
@@ -27,7 +39,7 @@
 }
 
 .nav-item {
-  margin-right: 10px;
+  margin-right: 14px;
 }
 
 .nav-link {
@@ -37,7 +49,26 @@
 }
 
 .nav-link:hover {
+  border-bottom: 1px solid var(--color-4);
+}
+
+#navbar.navbar.scrolled .nav-link:hover {
+  border-bottom: 1px solid var(--color-3);
+}
+
+.nav-buttons button {
+  padding: 6px 12px;
+  font-size: 1rem;
+  background: var(--color-4);
   color: var(--color-3);
+  border: none;
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+#navbar.navbar.scrolled .nav-buttons button {
+  background: var(--color-3);
+  color: var(--color-4);
 }
 
 @media (max-width: 768px) {
@@ -54,10 +85,3 @@
     font-size: 1rem;
   }
 }
-
-/* Additional styles to handle background color change when scrolling */
-#navbar.navbar.scrolled {
-  background-color: #333;
-}
-
-

@@ -1,0 +1,101 @@
+/* login.css */
+
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 80vh;
+  padding-top: 8rem;
+}
+
+.login .formComponent {
+  background-color: var(--color-1);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.login .loginContent h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: var(--color-5);
+}
+
+.login .loginContent p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.login form h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.login .form-group {
+  margin: 10px 10px;
+  text-align: left;
+}
+
+label {
+  font-size: 1.2rem;
+  color: var(--color-5);
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+
+.form-group.row-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-group.row-container a {
+  color: var(--color-4);
+  text-decoration: none;
+}
+.form-group.row-container a:hover {
+  text-decoration: underline;
+}
+
+.loginBtnContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.formButton {
+  background-color: var(--color-4);
+  color: var(--color-3);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-bottom: 4px;
+  width: 50%;
+}
+
+.loginBtnContainer a {
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: #6e6e6e;
+}
+.loginBtnContainer a span {
+  color: #0056b3;
+}
+.formButton:hover {
+  background-color: #0056b3;
+}

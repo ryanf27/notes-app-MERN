@@ -1,9 +1,13 @@
 @import "../../index.css";
 
-* {
-  /* border: 1px solid red; */
+.dashboard {
 }
 
-.container {
-  min-height: 100vh;
+.dashboard-content {
+}
+
+.main-content {
+  position: absolute;
+  width: 70%;
+  right: 0;
 }

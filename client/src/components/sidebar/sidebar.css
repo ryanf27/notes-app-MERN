@@ -1,0 +1,74 @@
+@import "../../index.css";
+
+.sidebar {
+  position: absolute;
+  width: 20%;
+  bottom: 0;
+  top: 0;
+  background-color: var(--color-5);
+  color: var(--color-3);
+  padding: 10px;
+  border-right: 1px solid #ccc;
+  min-width: 200px;
+  text-align: center;
+}
+
+.sidebar-title {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.sidebar-list {
+  list-style: none;
+  padding: 10px;
+}
+
+.sidebar-item {
+  margin: 20px 0;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  display: flex;
+  align-items: center;
+}
+
+.sidebar-icon {
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+
+.sidebar-item:hover {
+  color: #007bff;
+  font-weight: bold;
+}
+
+.sidebar-buttons {
+  transform: translateY(180px);
+
+  margin: 20px 10px;
+}
+
+.sidebar-button {
+  background-color: var(--color-3);
+  color: var(--color-5);
+  border: none;
+  padding: 8px 20px;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  transition: background-color 0.3s ease;
+  margin-bottom: 10px;
+}
+
+.sidebar-button i {
+  font-size: 1.2rem;
+  margin-right: 10px;
+}
+
+.sidebar-button:hover {
+  background-color: #0056b3;
+  color: var(--color-3);
+}
