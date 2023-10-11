@@ -1,0 +1,62 @@
+@import "../../index.css";
+
+.faq {
+  padding: 20px;
+  margin-bottom: 8rem;
+}
+
+.faq-title {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.faq-item {
+  background: var(--color-1);
+  padding: 20px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  position: relative;
+}
+
+.faq-item:hover {
+  background: var(--color-3);
+}
+
+.faq-question {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icon {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.faq-answer {
+  font-size: 1rem;
+  color: #555;
+  display: none;
+  padding-top: 10px;
+}
+
+.faq-item.open .icon {
+  transform: rotate(180deg);
+}
+
+.faq-item.open .faq-answer {
+  display: block;
+}

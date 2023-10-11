@@ -1,20 +1,18 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;1,100;1,300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,300&display=swap");
 
 :root {
-  --primary-color: #fefffe;
-  --secondary-color: #e9ebf8;
-  --text-color: #000;
-  --background-color: #a5a299;
-  --button-color: #b4b8c5;
-  --secondary-button-color: #8d818c;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  --color-1: #a7c1e4;
+  --color-2: #80a1c4;
+  --color-3: #e1f2fe;
+  --color-4: #4a4e69;
+  --color-5: #152642;
+  /* --color-6: #de9e36; */
 }
 
 body {
-  font-family: "Lato", sans-serif;
+  font-family: "Merriweather", serif;
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }

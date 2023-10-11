@@ -1,7 +1,6 @@
-import { Form, FormGroup, FormControl, Button } from "react-bootstrap";
 import { useState } from "react";
 import "./Register_Login.css";
-import Navigation from "../components/Navigation";
+import Navigation from "../../components/navigation/Navigation";
 
 const Register = () => {
   const [name, setName] = useState("");
@@ -11,9 +10,11 @@ const Register = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
   };
+
   return (
     <div className="register">
       <Navigation />
+      {/* Include Navigation component if needed */}
       <div className="formComponent">
         <div className="registerContent">
           <h2>Welcome to Notes App</h2>
@@ -21,48 +22,50 @@ const Register = () => {
             To get started, simply register for a free Notes App account. It
             only takes a few minutes and is completely free.
           </p>
-
           <p>Trusted by over 1 million users.</p>
         </div>
-        <Form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
           <h2>Registration</h2>
-          <FormGroup>
-            <Form.Label>Name</Form.Label>
-            <FormControl
-              className="formControl"
+          <div className="form-group">
+            <label htmlFor="name">Name</label>
+            <input
+              className="form-control"
               type="text"
               name="name"
+              id="name"
               placeholder="Enter your name"
               value={name}
               onChange={(event) => setName(event.target.value)}
             />
-          </FormGroup>
-          <FormGroup>
-            <Form.Label>Email</Form.Label>
-            <FormControl
-              className="formControl"
+          </div>
+          <div className="form-group">
+            <label htmlFor="email">Email</label>
+            <input
+              className="form-control"
               type="email"
               name="email"
+              id="email"
               placeholder="Enter your email"
               value={email}
               onChange={(event) => setEmail(event.target.value)}
             />
-          </FormGroup>
-          <FormGroup>
-            <Form.Label>Password</Form.Label>
-            <FormControl
-              className="formControl"
+          </div>
+          <div className="form-group">
+            <label htmlFor="password">Password</label>
+            <input
+              className="form-control"
               type="password"
               name="password"
+              id="password"
               placeholder="Enter your password"
               value={password}
               onChange={(event) => setPassword(event.target.value)}
             />
-          </FormGroup>
-          <Button className="formButton" type="submit">
+          </div>
+          <button className="btn btn-primary formButton" type="submit">
             Register
-          </Button>
-        </Form>
+          </button>
+        </form>
       </div>
     </div>
   );

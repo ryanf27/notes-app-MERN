@@ -1,14 +1,6 @@
-import {
-  Form,
-  FormGroup,
-  FormControl,
-  Button,
-  FormCheck,
-  Nav,
-} from "react-bootstrap";
 import { useState } from "react";
 import "./Register_Login.css";
-import Navigation from "../components/Navigation";
+import Navigation from "../../components/navigation/Navigation";
 
 const Login = () => {
   const [name, setName] = useState("");
@@ -28,43 +20,56 @@ const Login = () => {
             others on projects.
           </p>
         </div>
-        <Form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
           <h2>Login</h2>
-          <FormGroup>
-            <Form.Label>Name</Form.Label>
-            <FormControl
-              className="formControl"
+          <div className="form-group">
+            <label htmlFor="name">Name</label>
+            <input
+              className="form-control"
               type="text"
               name="name"
+              id="name"
               placeholder="Enter your name"
               value={name}
               onChange={(event) => setName(event.target.value)}
             />
-          </FormGroup>
+          </div>
 
-          <FormGroup>
-            <Form.Label>Password</Form.Label>
-            <FormControl
-              className="formControl"
+          <div className="form-group">
+            <label htmlFor="password">Password</label>
+            <input
+              className="form-control"
               type="password"
               name="password"
+              id="password"
               placeholder="Enter your password"
               value={password}
               onChange={(event) => setPassword(event.target.value)}
             />
-          </FormGroup>
-          <div className="rowContainer">
-            <FormCheck type="checkbox" label="Keep me logged in" />
-            <Nav.Link href="/forgot-password">Forgot password?</Nav.Link>
           </div>
-          <Button className="formButton" type="submit">
-            Login
-          </Button>
 
-          <Nav.Link href="/register">
+          <div className="form-group row-container">
+            <div className="form-check">
+              <input
+                className="form-check-input"
+                type="checkbox"
+                id="keepLoggedIn"
+              />
+              <label className="form-check-label" htmlFor="keepLoggedIn">
+                Keep me logged in
+              </label>
+            </div>
+            <a href="/forgot-password">Forgot password?</a>
+          </div>
+
+          <button className="btn btn-primary formButton" type="submit">
+            Login
+          </button>
+
+          <a href="/register">
             Dont have an account? <span>Sign up</span>
-          </Nav.Link>
-        </Form>
+          </a>
+        </form>
       </div>
     </div>
   );

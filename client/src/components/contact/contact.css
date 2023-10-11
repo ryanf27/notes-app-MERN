@@ -1,0 +1,52 @@
+@import "../../index.css";
+
+.contact {
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  background: var(--color-4);
+}
+
+.contact-title {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: var(--color-3);
+}
+
+.contact-text {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: var(--color-3);
+}
+
+.contact-email {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: var(--color-3);
+}
+
+.contact-email a {
+  color: var(--color-3);
+  text-decoration: none;
+}
+
+.contact-email a:hover {
+  text-decoration: underline;
+}
+
+.social-media-text {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: var(--color-3);
+}
+
+.social-link {
+  font-size: 2rem;
+  margin: 0 10px;
+  color: var(--color-2);
+  text-decoration: none;
+}
+
+.social-link:hover {
+  color: var(--color-3);
+}

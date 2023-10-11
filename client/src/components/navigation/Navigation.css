@@ -1,0 +1,63 @@
+#navbar.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+  background: transparent;
+  border-bottom: 1px solid #ccc;
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+  transition: background-color 0.3s ease;
+}
+
+#navbar a {
+  color: var(--color-5);
+}
+
+.navbar-brand img {
+  width: 60px;
+  cursor: pointer;
+}
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+.nav-item {
+  margin-right: 10px;
+}
+
+.nav-link {
+  color: var(--color-5);
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+.nav-link:hover {
+  color: var(--color-3);
+}
+
+@media (max-width: 768px) {
+  .navbar-toggler {
+    display: block;
+  }
+
+  .navbar-nav {
+    display: none;
+    flex-direction: column;
+  }
+
+  .navbar-brand {
+    font-size: 1rem;
+  }
+}
+
+/* Additional styles to handle background color change when scrolling */
+#navbar.navbar.scrolled {
+  background-color: #333;
+}
+
+

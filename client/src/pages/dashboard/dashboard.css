@@ -1,0 +1,9 @@
+@import "../../index.css";
+
+* {
+  /* border: 1px solid red; */
+}
+
+.container {
+  min-height: 100vh;
+}
