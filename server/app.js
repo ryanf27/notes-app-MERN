@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const cookieParser = require("cookie-parser");
+const cors = require("cors");
 
 require("dotenv").config();
 const port = process.env.PORT || 3000;
@@ -10,6 +11,7 @@ const mongoose = require("mongoose");
 const handleErrorMiddleware = require("./middlewares/error-handler");
 app.use(cookieParser());
 app.use(express.json());
+app.use(cors());
 
 // connect to MongoDB
 const connectMongo = async () => {

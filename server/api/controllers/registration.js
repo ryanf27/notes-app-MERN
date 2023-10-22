@@ -3,12 +3,7 @@ const Users = require("../models/users");
 
 const register = async (req, res, next) => {
   try {
-    const { username, email, password, confirmPassword } = req.body;
-
-    if (password != confirmPassword)
-      return res
-        .status(400)
-        .json({ message: "Password and confirmation password do not match." });
+    const { username, email, password } = req.body;
 
     const salt = await bcrypt.genSalt();
     const hashedPassword = await bcrypt.hash(password, salt);
@@ -21,7 +16,7 @@ const register = async (req, res, next) => {
 
     res.status(201).json({
       message: "success",
-    });
+    });``
   } catch (error) {
     next(error);
   }

@@ -42,10 +42,10 @@ const create = async (req, res, next) => {
     if (check) {
       throw new BadRequestError(`The Note Name already used`);
     }
-    const result = await Notes.create({ title, body });
+    await Notes.create({ title, body });
 
     res.status(201).json({
-      data: result,
+      message: "success",
     });
   } catch (err) {
     next(err);
